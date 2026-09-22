@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { gsap, ScrollTrigger } from "@/lib/gsap";
 import { canvasDpr, decodeWidth, FRAME_H, FRAME_W } from "@/lib/frameGeometry";
+import { asset } from "@/lib/basePath";
 import { useReducedMotion } from "@/lib/useReducedMotion";
 
 /**
@@ -50,7 +51,7 @@ export function WornSequence({
       const useBitmap = typeof createImageBitmap === "function";
 
       const load = async (i: number) => {
-        const src = `/worn/frame-${String(i + 1).padStart(4, "0")}.webp`;
+        const src = asset(`/worn/frame-${String(i + 1).padStart(4, "0")}.webp`);
         try {
           if (useBitmap) {
             const blob = await (await fetch(src)).blob();

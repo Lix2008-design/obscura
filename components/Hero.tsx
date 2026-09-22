@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import { gsap } from "@/lib/gsap";
 import { useFrames } from "@/lib/frames";
 import { useReducedMotion } from "@/lib/useReducedMotion";
+import { asset } from "@/lib/basePath";
 
 const LINES = ["Nothing", "Between You", "And The Light"];
 
@@ -50,7 +51,7 @@ export function Hero() {
     <section id="hero" ref={root} className="relative h-[100svh] w-full overflow-hidden">
       <img
         data-hero-img
-        src="/hero.jpg"
+        src={asset("/hero.jpg")}
         alt=""
         fetchPriority="high"
         className="absolute inset-0 h-full w-full object-cover"

@@ -7,13 +7,15 @@
  * whenever that group changes. A plain repeating background on its own layer
  * costs the compositor nothing per frame.
  */
+import { asset } from "@/lib/basePath";
+
 export function Grain() {
   return (
     <div
       aria-hidden="true"
       className="layer-fixed z-40"
       style={{
-        backgroundImage: "url(/noise.png)",
+        backgroundImage: `url(${asset("/noise.png")})`,
         backgroundRepeat: "repeat",
         backgroundSize: "256px 256px",
         opacity: 0.06,
